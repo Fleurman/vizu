@@ -247,10 +247,10 @@ var Vizu = (function () {
 
     let openVizu = function (data, id) {
         fireEvent("preOpen", { data: data, id: id });
-        if (item instanceof Array) {
-            openGallery(item, id);
+        if (data instanceof Array) {
+            openGallery(data, id);
         } else {
-            openSingle(item);
+            openSingle(data);
         }
         this.className = "open";
         fireEvent("open", { data: data, id: id });
