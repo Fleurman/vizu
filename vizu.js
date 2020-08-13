@@ -245,15 +245,15 @@ var Vizu = (function () {
         Screen.init(item.url);
     }
 
-    let openVizu = function (item, id) {
-        fireEvent("preOpen", { item: item, id: id });
+    let openVizu = function (data, id) {
+        fireEvent("preOpen", { data: data, id: id });
         if (item instanceof Array) {
             openGallery(item, id);
         } else {
             openSingle(item);
         }
         this.className = "open";
-        fireEvent("open", { item: item, id: id });
+        fireEvent("open", { data: data, id: id });
     };
 
     let keyDownHandler = function (e) {
